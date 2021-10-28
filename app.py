@@ -6,6 +6,7 @@ from flask.helpers import url_for
 from flask_wtf import RecaptchaField
 from werkzeug.utils import redirect
 import bcrypt
+import smtplib
 
 # Flask-wtf
 from flask_wtf import FlaskForm
@@ -89,8 +90,6 @@ def login():
             
             return render_template("login.html", form=form)
             
-
-
           else:
               
               return render_template("login.html", form=form)
@@ -356,6 +355,7 @@ def updateMat(id):
         cur.close() # cerramos el cursor
         db = close_db()
         return redirect(url_for("consultarMat"))
+        
 
 # ------------------ RUTA ELIMINAR MATERIAS
 @app.route('/deleteMat/<string:id>')
@@ -392,8 +392,25 @@ def miInformacion(id):
         flash( error )
     else:
         return render_template("docente/misDatos.html" , usuario = userInfo)
-     
 
+@app.route('/form', methods=['POST'])
+def form():
+    primer_nombre = request.form.get("primer_nombre")
+    segundo_nombre = request.form.get("segundo_nombre")
+    email = request.form.get("email")
+    
+    message = "Se te ha dado de alta en el sistema"
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.starttls()
+    server.login("bastosy@uninorte.edu.co", "An5234601__")
+    server.sendmail("bastosy@uninorte.edu.co",email,message)
+
+    if not primer_nombre or not segundo_nombre or not email:
+        error_statement = "Todos los campos requeridos"
+        return render_template("superadmin/main.html", error_statement=error_statement, primer_nombre=primer_nombre, segundo_nombre=segundo_nombre,email=email)
+    return render_template("superadmin/main.html")
+
+    
 #------------------------- ELIMINAR ES SOLO DE PRUEBA
 @app.route('/table')
 def pruebatable():

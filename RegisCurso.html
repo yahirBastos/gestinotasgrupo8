@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title> Gestion de Notas </title>
+            <link rel="stylesheet" type="text/css" href="miEstilo.css" /> 
+		<script src="nombre.js"></script>
+	<head>
+	
+	<body>
+		<h1 >Registros de Cursos</h1>
+		<br><br>
+		<form   action="" 
+				method="post" 
+				name="formRegistro"
+				onSubmit="validar_formulario()">
+				
+				<div style="text-align:justify">
+					<label for="IdCurso">Ident. Materia:</label>
+					<input type="text" name="IdCurso" />
+					
+					<label for="nombreCurso">Nombre Curso:</label>
+					<input type="text" name="nombreCurso" id="nombreCurso" />
+				</div>
+				<center>
+				<div style="text-align:center"></div>
+					<label for="NumeroIntegrantes">Numero Integrantes:</label>
+					<input type="text" name="NumeroIntegrantes" />
+				</div>
+				</center>
+				
+				<center>
+				<br><br>
+				<button type="submit" value="Enviar">Registrar</button>
+				<button type="submit" value="Cancelar">Cancelar</button></center>
+		</form>
+	</body>
+</html>

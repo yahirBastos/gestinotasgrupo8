@@ -1,0 +1,63 @@
+{% extends 'base3.html' %}
+
+{% block title %} Sistema de Gestion de Notas {% endblock %}
+
+{% block body %}
+
+<div class="table-responsive mt-5">
+<table id="consultaUser" class="table caption-top table-color table-striped table-bordered">
+    <caption class="section-title-two">Lista de Usuarios</caption>
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Segundo Nombre</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Numero Documento</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">direccion</th>
+        <th scope="col">Operacion</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        
+        {% for user in usuarios %} 
+        <tr>
+            <th scope="row">{{ user[0] }}</th>
+            <td>{{ user[1] }}</td>
+            <td>{{ user.3 }}</td>
+            <td>{{ user.4 }}</td>
+            <td>{{ user.5 }}</td>
+            <td>{{ user.6 }}</td>
+            <td>{{ user.7 }}</td>
+            <td>{{ user.8 }}</td>
+            <td>
+                <a href="/editUser/{{ user.0 }}" class="btn btn-secondary">Edit</a>
+                <a href="/deleteUser/{{ user.0 }}" class="btn btn-danger btn-delete">Delete</a>
+            </td>
+
+        </tr>
+        {% endfor %}
+      
+    </tbody>
+  </table>
+</div>
+
+
+
+<script src="{{url_for('static', filename='js/datatables/jquery-3.5.1.js')}}"></script>
+<script src="{{url_for('static', filename='js/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/datatables/dataTables.bootstrap5.min.js')}}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="{{url_for('static', filename='js/buttons.js')}}"></script>
+
+
+<!-- <script type="text/javascript">
+  $('.btn-delete').on('click', function () {
+      return confirm('Are you sure?');
+  });
+</script> -->
+
+{% endblock %}

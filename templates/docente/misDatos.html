@@ -1,0 +1,72 @@
+{% extends 'base3.html' %}
+
+{% block title %} Sistema de Gestion de Notas {% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <h1 class="section-title">Datos Personales Usuario {{ usuario[3]}}</h1>
+        <form action="/updateUser/{{ usuario[0] }}" method="POST">
+
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="disabledTextInput">Correo</label>
+                <input type="email" id="disabledTextInput" name="correo" class="form-control" value="{{ usuario[1] }}" disabled readonly>
+            </div>
+
+            <!-- Text input
+            <div class="form-outline mb-4">
+                <label class="form-label" for="password">Contraseña</label>
+                <input type="password" id="password" class="form-control" value=""/>
+            </div> -->
+
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="primerNombre">Primer Nombre</label>
+                  <input type="text" id="primerNombre" name="primerNombre" class="form-control" value="{{ usuario[3]}}" disabled readonly>
+                  
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <label class="form-label" for="segundoNombre">Segundo Nombre</label>
+                  <input type="text" id="segundoNombre" name="segundoNombre" class="form-control" value="{{ usuario[4]}}" disabled readonly>
+                </div>
+              </div>
+            </div>
+          
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="apellidos">Apellidos</label>
+              <input type="text" id="apellidos" class="form-control" name="apellidos" value="{{ usuario[5]}}" disabled readonly>
+            </div>
+          
+            <!-- Num Document  -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="numDocumento">Numero Documento</label>
+              <input type="text" id="numDocumento" class="form-control" name="numDocumento" value="{{ usuario[6]}}" disabled readonly>
+            </div>
+          
+            <!-- Number input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="telefono">Telefono</label>
+              <input type="number" id="telefono" class="form-control" name="telefono" value="{{ usuario[7]}}" disabled readonly>
+              
+            </div>
+
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="direccion">Direccion</label>
+                <input type="text" id="direccion" class="form-control" name="direccion" value="{{ usuario[8]}}" disabled readonly>
+              </div>
+          
+          </form>
+    </div>
+</div>
+
+
+{% endblock %}

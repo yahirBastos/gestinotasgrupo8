@@ -1,0 +1,97 @@
+/*--------------------------------------------------------------
+# Top Bar
+--------------------------------------------------------------*/
+#topbar {
+    background: #106eea;
+    height: auto;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.5s;
+    color: #fff;
+    padding: 0;
+  }
+  #topbar .contact-info i {
+    font-style: normal;
+    color: #fff;
+  }
+  #topbar .contact-info i a, #topbar .contact-info i span {
+    padding-left: 5px;
+    color: #fff;
+  }
+  #topbar .contact-info i a {
+    line-height: 0;
+    transition: 0.3s;
+    transition: 0.3s;
+  }
+  #topbar .contact-info i a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  #topbar .social-links a {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 0;
+    transition: 0.3s;
+    margin-left: 20px;
+  }
+  #topbar .social-links a:hover {
+    color: white;
+  }
+.bg{
+    background-image: url('/static/images/forms/engranajes-ideas.png');
+    background-position: center center;
+} 
+
+.section-title{
+  font-size: clamp(1.2rem,calc(1rem + 3.5vw),4rem);
+  text-shadow: 0 2px 2px rgba(0,0,0,.5);
+}
+.section-title-two{
+  font-size: clamp(1.2rem,calc(1rem + 3.5vw),4rem);
+  text-shadow: 0 2px 2px rgba(0,0,0,.5);
+  color: black;
+}
+
+.gradient-custom-3 {
+  /* fallback for old browsers */
+  background: #2f4858;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: -webkit-linear-gradient(to right, rgba(47, 72, 88, 0.5), rgba(158, 228, 147, 0.5)); */
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: linear-gradient(to right, rgba(47, 72, 88, 0.5), rgba(158, 228, 147, 0.5)) */
+}
+/* .gradient-custom-4 {
+  fallback for old browsers
+  background: #84fab0;
+
+  Chrome 10-25, Safari 5.1-6
+  background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+
+  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
+  background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+
+  color: white;
+} */
+/* .bg-image{
+  background-image: url('https://mdbootstrap.com/img/Photos/new-templates/search-box/img4.jpg');
+} */
+.section-register{
+  color: #fff;
+}
+.section-register .form-outline{
+  font-weight: bold;
+}
+.table-color {
+  /* --bs-table-bg: #cff4fc;
+  --bs-table-striped-bg: #c5e8ef;
+  --bs-table-striped-color: #000;
+  --bs-table-active-bg: #badce3;
+  --bs-table-active-color: #000;
+  --bs-table-hover-bg: #bfe2e9;
+  --bs-table-hover-color: #000; */
+  color: #1d3557;
+  border-color: #f1faee;
+}
+
+  

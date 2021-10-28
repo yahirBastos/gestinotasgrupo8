@@ -1,0 +1,43 @@
+{% extends 'base2.html' %}
+
+{% block title %} Sistema de Gestion de Notas {% endblock %}
+
+{% block body %}
+
+<div class="table-responsive mt-5">
+<table id="consultaMat" class="table caption-top table-color table-striped table-bordered">
+    <caption class="section-title-two">Lista de Materias</caption>
+    <thead>
+      <tr class="table-dark">
+        <th scope="col">ID</th>
+        <th scope="col">nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Operaciones</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+        {% for materia in materias %} 
+        <tr>
+            <th scope="row">{{ materia[0] }}</th>
+            <td>{{ materia[1] }}</td>
+            <td>{{ materia[2] }}</td>
+
+            <td>
+                <a href="/editMat/{{ materia.0 }}" class="btn btn-secondary">Edit</a>
+                <a href="/deleteMat/{{ materia.0 }}" class="btn btn-danger btn-delete">Delete</a>
+            </td>
+
+        </tr>
+        {% endfor %}
+      
+    </tbody>
+  </table>
+</div>
+
+<script src="{{url_for('static', filename='js/datatables/jquery-3.5.1.js')}}"></script>
+<script src="{{url_for('static', filename='js/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/datatables/dataTables.bootstrap5.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/buttons.js')}}"></script>
+
+{% endblock %}

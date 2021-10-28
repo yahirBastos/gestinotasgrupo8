@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %} Ingreso a SystemNotas {% endblock %}
+
+{% block body %}
+
+<style>
+
+    
+</style>
+
+<div class="container-fluid bg-primary mt-5 rounded shadow">
+    <div class="row align-items-stretch">
+        <div class="col bg img-fluid d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
+
+        </div>
+        <div class="col bg-white p-5 rounded-end">
+            <div class="text-end">
+                <!-- <img src="{{url_for('static', filename = 'images/forms/books.png')}}" class="img-fluid" height="60" width="60" alt="Logotipo de mi marca"> -->
+            </div>
+            <h2 class="fw-bold text-center py-5">Bienvenido</h2>
+            <section class="content">
+                {% for message in get_flashed_messages() %}
+                <div class="alert alert-danger">{{ message }}</div>
+                {% endfor %}
+              </section>
+              
+            <!-- Login -->
+            <form action="" method="post">
+                {{ form.csrf_token() }}
+                <div class="mb-4">
+                    <!-- <label for="email" class="form-label">Correo Electronico</label>
+                    <input type="email" class="form-control" name="email"> -->
+                    {{ form.email.label(class="form-label") }}
+                    {{ form.email(class="form-control", autofocus=true) }}
+                </div>
+                <div class="mb-4">
+                    <!-- <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" name="password"> -->
+                    
+                    {% if form.password.errors %}
+                        {% for error in form.password.errors %}
+                            <div id="alert" class="alert alert-danger"> {{ error }}</div>
+                        {% endfor %}
+                    {% endif %}
+                    {{ form.password.label(class="form-label") }}
+                    {{ form.password(class="form-control") }}
+                </div>
+                <div class="mb-4 form-check">
+                    <input type="checkbox" name="aceptar" class="form-check-input">
+                    <label for="aceptar" class="form-check-label">Acepta la Politica de Privacidad de Datos Vigente</label>
+                </div>
+                <div class="d-grid">
+                    {{ form.recaptcha }}
+                    {% for error in form.recaptcha.errors %}
+                            <div id="alert" class="alert alert-danger"> {{ error }}</div>
+                        {% endfor %}
+                    <!-- <button type="submit" class="btn btn-primary">Iniciar Sesión</button> -->
+                    {{ form.enviar(class="btn btn-primary") }}
+                </div>
+                <!-- {% for field, errors in form.errors.items() %}
+                    <small class="form-text text-muted ">
+                {{ ', '.join(errors) }}
+                    </small>
+                {% endfor %} -->
+                <!-- <div class="my-3">
+                    <span>No puede Ingresar ?<a href="#"> Recordar Clave </a></span>
+                </div> -->
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

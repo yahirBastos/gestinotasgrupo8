@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title> Gestion de Notas </title>
+            <link rel="stylesheet" type="text/css" href="miEstilo.css" /> 
+		<script src="nombre.js"></script>
+	<head>
+	
+	<body>
+		<h1 >Registros de Usuarios</h1>
+		<br><br>
+		<form   action="" 
+				method="GET" 
+				name="formRegistro"
+				onSubmit="validar_formulario()">
+				
+				<div style="text-align:justify">
+					<label for="IdUsuario">IdUsuario :</label>
+					<input type="text" name="Idusuario" />
+					
+					<label for="username">Usuario:</label>
+					<input type="text" name="username" id="username" />
+				</div>
+
+				<div style="text-align:center"></div>
+					<label for="Documento">Documento:</label>
+					<input type="text" name="documento" />
+				</div>
+
+				<br>
+
+				<label for="Primer Nombre">Primer Nombre :</label>
+				<input type="text" name="PrimerNombre" id="PrimerNombre"/>
+				
+				<label for="Segund Nombre">Segundo Nombre:</label>
+				<input type="text" name="segundoNombre" id="SegundoNombre"/>
+				
+				<label for="PrimerApellido">Primer Apellido:</label>
+				<input type="text" name="PrimerApellido" id="PrimerApellido"/>
+				
+				<label for="SegundoApellido">Segundo Apellido:</label>
+				<input type="text" name="SegundoNombre" id="segundoNombre"/>
+				
+				<label for="Telefono">Telefono        :</label>
+				<input type="text" name="Tel id="Tel"/>
+				
+				<label for="Direccion">Direccion       :</label>
+				<input type="text" name="Direccion" id="Direccion"/>
+				<center>
+				<br>
+				<label for="correo">Email:</label>
+				<input type="text" name="correo" id="correo" />
+				<br><br>
+				<button type="submit" value="Enviar">Registrar</button>
+				<button type="submit" value="Cancelar">Cancelar</button></center>
+		</form>
+	</body>
+</html>

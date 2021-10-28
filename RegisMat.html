@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title> Gestion de Notas </title>
+            <link rel="stylesheet" type="text/css" href="miEstilo.css" /> 
+		<script src="nombre.js"></script>
+	<head>
+	
+	<body>
+		<h1 >Registros de Materias</h1>
+		<br><br>
+		<form   action="" 
+				method="GET" 
+				name="formRegistro"
+				onSubmit="validar_formulario()">
+				
+				<div style="text-align:justify">
+					<label for="IdMateria">IdMateria :</label>
+					<input type="text" name="IdMateria" />
+					
+					<label for="IdDocente">IdDocente:</label>
+					<input type="text" name="IdDocente" id="IDocente" />
+				</div>
+				<div style="text-align:center"></div>
+					<label for="NombreMateria">Nombre Materia:</label>
+					<input type="text" name="NombreMateria" />
+				</div>
+
+				<br>
+				<label for="Descripcion">Descripcion :</label>
+				<input type="text" name="Descripcion" id="Descripcion"/>
+				
+				
+				<br><br>
+				<button type="submit" value="Enviar">Registrar</button>
+				<button type="submit" value="Cancelar">Cancelar</button></center>
+		</form>
+	</body>
+</html>

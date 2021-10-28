@@ -1,0 +1,47 @@
+{% extends 'base2.html' %}
+
+{% block title %} Sistema de Gestion de Notas {% endblock %}
+
+{% block body %}
+<style type="text/css">
+    .section-title{
+        font-size: clamp(1.2rem,calc(1rem + 3.5vw),4rem);
+        text-shadow: 0 2px 2px rgba(0,0,0,.5);
+    }
+    
+</style>
+
+<div class="container">
+    <div class="row">
+        <h1 class="section-title">Editar Materia</h1>
+        <form action="/updateMat/{{ materia[0] }}" method="POST">
+
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+                <label class="form-label" for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" value="{{ materia[1] }}"/>
+            </div>
+
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="descripcion">Descripcion</label>
+              <input type="text" id="descripcion" class="form-control" name="descripcion" value="{{ materia[2] }}"/>
+            </div>
+          
+            <!-- Message input
+            <div class="form-outline mb-4">
+              <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+              <label class="form-label" for="form6Example7">Additional information</label>
+            </div> -->
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Modificar Materia</button>
+          </form>
+
+    </div>
+</div>
+
+
+{% endblock %}

@@ -26,7 +26,7 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 app.config['RECAPTCHA_PUBLIC_KEY'] = '6LfXH_McAAAAAKytGfXrdqWIq5_HIWO5T0jSsZ5p'
 app.config['RECAPTCHA_PRIVATE_KEY'] = '6LfXH_McAAAAAJ7F3pmteXdxYLnqc_lcU9-6oDTT'
-app.config['TESTING'] = True
+app.config['TESTING'] = False
 
 #Semilla Para Encriptar se usa en  /registroUser
 semilla = bcrypt.gensalt()

@@ -213,6 +213,8 @@ def updateUser(id):
     if request.method == 'POST':
         #Captura de datos
         correo = request.form['correo']
+        password = request.form['password']
+
         primerNombre = request.form['primerNombre']
         segundoNombre = request.form['segundoNombre']
         apellidos = request.form['apellidos']
@@ -220,11 +222,16 @@ def updateUser(id):
         telefono = request.form['telefono']
         direccion = request.form['direccion']
 
+        #Encriptar contraseña usando semilla 
+        password_encode = password.encode("utf-8")
+        password_encriptada = bcrypt.hashpw(password_encode,semilla)
+
         db = get_db() #Abre conexion
         cur = db.cursor() #Variable que tiene la conexion y cre un objeto de tipo cursor
 
         sQuery = """UPDATE usuario
                     SET correo = ?,
+                        contrasenia = ?,
                         primerNombre = ?,
                         segundoNombre = ?,
                         Apellidos = ?,
@@ -234,7 +241,7 @@ def updateUser(id):
                     WHERE idUsuario = ?""" 
 
         # sentencia SQL
-        cur.execute(sQuery,(correo,primerNombre,segundoNombre,apellidos,numDocumento,telefono,direccion,id)) #Preparamos la sentencia para ejecucion
+        cur.execute(sQuery,(correo,password_encriptada,primerNombre,segundoNombre,apellidos,numDocumento,telefono,direccion,id)) #Preparamos la sentencia para ejecucion
         db.commit()
         cur.close() # cerramos el cursor
         db = close_db()
@@ -410,7 +417,7 @@ def form():
         return render_template("superadmin/main.html", error_statement=error_statement, primer_nombre=primer_nombre, segundo_nombre=segundo_nombre,email=email)
     return render_template("superadmin/main.html")
 
-    
+
 #------------------------- ELIMINAR ES SOLO DE PRUEBA
 @app.route('/table')
 def pruebatable():

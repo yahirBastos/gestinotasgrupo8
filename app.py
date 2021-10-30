@@ -409,7 +409,7 @@ def form():
     message = "Se te ha dado de alta en el sistema"
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()
-    server.login("bastosy@uninorte.edu.co", "An5234601__")
+    server.login("bastosy@uninorte.edu.co", "")
     server.sendmail("bastosy@uninorte.edu.co",email,message)
 
     if not primer_nombre or not segundo_nombre or not email:
